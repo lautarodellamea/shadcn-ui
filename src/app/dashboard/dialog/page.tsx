@@ -60,6 +60,7 @@ export default function Page() {
                 onChange={handleChange}
               />
             </div>
+            {/* para copiar texto, es propio de js */}
             <Button onClick={() => navigator.clipboard.writeText(text)} type="submit" size="sm" className="px-3">
               <span className="sr-only">Copy</span>
               <CopyIcon className="h-4 w-4" />

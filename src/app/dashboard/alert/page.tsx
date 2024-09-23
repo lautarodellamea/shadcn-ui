@@ -3,10 +3,11 @@ import { RocketIcon } from "@radix-ui/react-icons";
 
 export default function Page() {
   return (
+    // variant: destructive, success, info, outline, podemos crear las que querramos a demas de las que vienen
     <div className="grid gap-3">
       <Alert>
         <RocketIcon className="h-4 w-4" />
-        <AlertTitle>Heads up!</AlertTitle>
+        <AlertTitle>variant: default</AlertTitle>
         <AlertDescription>
           You can add components to your app using the cli.
         </AlertDescription>
@@ -14,7 +15,7 @@ export default function Page() {
 
       <Alert variant="destructive">
         <RocketIcon className="h-4 w-4" />
-        <AlertTitle>Heads up!</AlertTitle>
+        <AlertTitle>variant: destructive</AlertTitle>
         <AlertDescription>
           You can add components to your app using the cli.
         </AlertDescription>
@@ -22,7 +23,7 @@ export default function Page() {
 
       <Alert variant="success">
         <RocketIcon className="h-4 w-4" />
-        <AlertTitle>Success!</AlertTitle>
+        <AlertTitle>variant: success</AlertTitle>
         <AlertDescription>
           You can add components to your app using the cli.
         </AlertDescription>

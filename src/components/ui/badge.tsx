@@ -14,6 +14,8 @@ const badgeVariants = cva(
           "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
         destructive:
           "border-transparent bg-destructive text-destructive-foreground shadow hover:bg-destructive/80",
+
+        // nuestras variaciones custom
         success:
           "border-transparent bg-emerald-500 text-white shadow hover:bg-emerald-500/80",
         info:
@@ -39,6 +41,7 @@ function Badge({ className, variant, capitalize = false, ...props }: BadgeProps)
   return (
     <div className={cn(badgeVariants({ variant }), {
       'capitalize': capitalize
+      /* al className dejemoslo siempre al ultimo ya que termina sobreescribiendo todo */
     }, className)} {...props} />
   )
 }

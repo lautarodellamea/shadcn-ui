@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils"
 const buttonVariants = cva(
   "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
   {
+    // vemos variantes, creamos nuevas, vemoos otras propiedades como tamaño, etc
     variants: {
       variant: {
         default:
@@ -39,15 +40,19 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
   VariantProps<typeof buttonVariants> {
   asChild?: boolean;
+
+  // podemos agregar otras propiedades en este caso a ButtonProps
   capitalize?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  // aca desestructuramos capitalize que habiamos creado y le damos un valor por defecto
   ({ className, variant, size, asChild = false, capitalize = true, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }),
+          // aca ponemos la clase capitalize y de acuerdo a si esta en true o false se aplicara
           { 'capitalize': capitalize, }
         )}
         ref={ref}
