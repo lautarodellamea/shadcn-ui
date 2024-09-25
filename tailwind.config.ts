@@ -19,6 +19,10 @@ const config = {
       },
     },
     extend: {
+      backgroundImage: {
+        'hero-pattern': "url('/images/hero-img-prueba.webp')",
+
+      },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
